@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+}
+#todo-form {
+  margin-bottom: 20px;
+}
+#todo-input,
+#todo-desc {
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: block;
+}
+#add-btn {
+  padding: 10px;
+}
+#todo-list {
+  list-style: none;
+  padding: 0;
+}
+.todo-item {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.todo-title {
+  font-weight: bold;
+}
+.todo-desc {
+  margin: 5px 0;
+  color: #555;
+}
+.actions {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.actions button {
+  margin-left: 5px;
+}
+.edit-form {
+  margin-top: 10px;
+}
+.edit-form input,
+.edit-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 5px;
+}
+.edit-form button {
+  padding: 5px 10px;
+  margin-right: 5px;
+}
