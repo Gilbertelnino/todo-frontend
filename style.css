@@ -25,6 +25,15 @@ body {
   padding: 15px;
   margin-bottom: 10px;
   position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+.todo-item input[type="checkbox"] {
+  margin-right: 10px;
+  margin-top: 5px;
+}
+.todo-content {
+  flex: 1;
 }
 .todo-title {
   font-weight: bold;
@@ -32,6 +41,10 @@ body {
 .todo-desc {
   margin: 5px 0;
   color: #555;
+}
+.completed {
+  text-decoration: line-through;
+  color: #888;
 }
 .actions {
   position: absolute;

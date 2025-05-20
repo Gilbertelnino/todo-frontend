@@ -21,13 +21,29 @@ function renderTodos(todos) {
     const li = document.createElement("li");
     li.className = "todo-item";
 
+    // Completed checkbox
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = todo.completed;
+    checkbox.addEventListener("change", () => {
+      updateTodo(todo.id, { completed: checkbox.checked });
+    });
+
+    // Content container
+    const content = document.createElement("div");
+    content.className = "todo-content";
+
     const titleEl = document.createElement("div");
     titleEl.textContent = todo.title;
     titleEl.className = "todo-title";
+    if (todo.completed) titleEl.classList.add("completed");
 
     const descEl = document.createElement("div");
     descEl.textContent = todo.description || "";
     descEl.className = "todo-desc";
+    if (todo.completed) descEl.classList.add("completed");
+
+    content.append(titleEl, descEl);
 
     const actions = document.createElement("div");
     actions.className = "actions";
@@ -43,7 +59,7 @@ function renderTodos(todos) {
     delBtn.addEventListener("click", () => deleteTodo(todo.id));
 
     actions.append(editBtn, delBtn);
-    li.append(titleEl, descEl, actions);
+    li.append(checkbox, content, actions);
     todoList.append(li);
   });
 }
@@ -112,7 +128,6 @@ function openEditForm(li, todo) {
         title: updatedTitle,
         description: updatedDesc,
       });
-      // form closes and UI updates via fetchTodos()
     }
   });
 
